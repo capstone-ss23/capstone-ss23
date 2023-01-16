@@ -5,7 +5,7 @@
 * Clone repo with `git clone git@github.com:capstone-ss23/capstone-ss23.git`
     - If this fails, make sure you have [set up an SSH key to work with GitHub.](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh)
 * Copy `.env`, `auth.json`, and `site.php` to the root of the repo.
-* Start the Docker containers (will take a while the first time) `sudo docker-compose up`
+* Start the Docker containers in the background (will take a while the first time) `sudo docker-compose up --detach`
     - Note: On Windows, make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed, and run this and all other commands without `sudo`.
 * Set up the website with composer, if you haven't already. Since it is available inside the Docker container, you do not need to install it. Simply run `sudo docker compose exec server /var/www/capstone-ss23/install_deps.sh`.
 * Navigate to http://localhost:8081 and make sure PHPMyAdmin works
