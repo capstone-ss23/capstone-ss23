@@ -15,7 +15,6 @@
 * Log in with username `cbowen` and empty password
 * Create a new user for yourself (Course Console -> Management -> Users -> Add User)
 * Log out and log back in as new user
-* Kill the `docker-compose` process. You are done!
 
 ### Starting the server
 Run `sudo docker-compose up --detach` from the repo root to run Docker in the background. Run without `--detach` to view the logs directly (useful for debugging).
