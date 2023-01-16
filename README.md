@@ -13,11 +13,12 @@ composer update
 composer run cl-installer
 ```
 
-* Start the Docker containers (will take a while the first time) `sudo docker-compose up`
-    - On Windows, make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed, and run this and all other commands without `sudo`.
+* Start the Docker containers (will take a while the first time)
+    - `sudo docker-compose up`
 
 * Navigate to http://localhost:8081 and make sure PHPMyAdmin works
-* Navigate to http://localhost:8080 and make sure the site works
+* Navigate to http://localhost:8080 and make sure the site loads
+    - Warning: the site sets a cookie when you attempt to log in. Since no tables have been set up, do NOT log in yet. 
 * Create all tables by navigating to http://localhost:8080/cl/setup/tables
 * Log in with username `cbowen` and empty password
 * Create a new user for yourself (Course Console -> Management -> Users -> Add User)
