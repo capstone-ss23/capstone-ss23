@@ -13,8 +13,8 @@ composer update
 composer run cl-installer
 ```
 
-* Start the Docker containers (will take a while the first time)
-    - `sudo docker-compose up`
+* Start the Docker containers (will take a while the first time) `sudo docker-compose up`
+    - On Windows, make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed, and run this and all other commands without `sudo`.
 
 * Navigate to http://localhost:8081 and make sure PHPMyAdmin works
 * Navigate to http://localhost:8080 and make sure the site works
