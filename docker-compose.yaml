@@ -1,5 +1,6 @@
 version: '3.9'
-
+# inspired from https://www.bornfight.com/blog/blog-lamp-docker-setup-with-php-8-and-mariadb-for-symfony-projects/
+# and https://mariadb.com/kb/en/setting-up-a-lamp-stack-with-docker-compose/
 services:
   mariadb:
     image: mariadb:${MARIADB_VERSION}
