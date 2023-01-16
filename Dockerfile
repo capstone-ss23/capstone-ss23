@@ -11,4 +11,4 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 RUN install-php-extensions gd pdo_mysql
 
 # make composer available
-COPY --from=composer:2.5.1 /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer:2.5.1 /usr/bin/composer /usr/bin/composer
