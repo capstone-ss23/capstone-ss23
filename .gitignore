@@ -92,3 +92,5 @@ yarn.lock
 # Visual Studio Code
 .vscode/
 
+# ignore auth
+auth.json
