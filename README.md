@@ -7,7 +7,7 @@
 * Copy `.env`, `auth.json`, and `site.php` to the root of the repo.
 * Start the Docker containers in the background (will take a while the first time) `sudo docker-compose up --detach`
     - Note: On Windows, make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed, and run this and all other commands without `sudo`.
-* Set up the website with composer, if you haven't already. Since it is available inside the Docker container, you do not need to install it. Simply run `sudo docker compose exec server /var/www/capstone-ss23/install_deps.sh`.
+* Set up the website with composer. Since it is available inside the Docker container, you do not need to install it. Simply run `sudo docker compose exec server /var/www/capstone-ss23/install_deps.sh`.
 * Navigate to http://localhost:8081 and make sure PHPMyAdmin works
 * Navigate to http://localhost:8080 and make sure the site loads
     - Warning: the site sets a cookie when you attempt to log in. Since no tables have been set up, do NOT log in yet. 
