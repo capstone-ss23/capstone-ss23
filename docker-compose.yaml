@@ -18,6 +18,10 @@ services:
     networks:
       network:
         ipv4_address: 10.10.10.1
+    healthcheck:
+      test: ["CMD-SHELL", "mysql capstone -ucapstone -p${MYSQL_PASSWORD} -e 'SELECT 1;'  || exit 1"]
+      interval: 2s
+      retries: 120
 
   admin:
     image: phpmyadmin/phpmyadmin:${PHPMYADMIN_VERSION}
@@ -29,6 +33,9 @@ services:
       - admin_data:/var/www/html
     networks:
       - network
+    depends_on:
+      mariadb:
+        condition: service_healthy
 
   server:
     build:
@@ -43,6 +50,11 @@ services:
       - ./:/var/www/capstone-ss23
     networks:
       - network
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      admin:
+        condition: service_started
 
 volumes:
   mariadb_data:
