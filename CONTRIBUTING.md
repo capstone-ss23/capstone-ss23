@@ -16,7 +16,11 @@
         -   `git pull --rebase`
 *   You may recieve comments on your changes on github, to where you can respond to them and possibly make further changes to your code.
 *   If your PR needs changes/ammendments: 
+<<<<<<< HEAD
     *   Make your changes 
+=======
+    *   Make your changes.
+>>>>>>> 6bd7b06 (Added a first draft of CONTRIBUTING.md and package.json changes from composer)
     *   `git add .`
     *   Instead of creating a new commit, you'll amend your changes to the commit you've already created by doing `git commit --amend --no-edit`. If you want to change the commit message, you can run `git commit --amend` which will allow you to change the commit message.
     *   `git pull --rebase`
