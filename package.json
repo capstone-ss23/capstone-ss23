@@ -4,8 +4,8 @@
     "description": "Capstone Development Website",
     "private": true,
     "workspaces": [
-        "vendor\/cl\/*",
-        "packages\/*"
+        "vendor/cl/*",
+        "packages/*"
     ],
     "scripts": {
         "build:dev": "webpack --config webpack.dev.js",
@@ -15,13 +15,13 @@
         "profile:prod": "webpack --config webpack.prod.js --json > stats.json",
         "test": "karma start karma.conf.js",
         "serve": "webpack-dev-server  --config webpack.serve.js --open",
-        "build:docs:course": "cd vendor\/cl\/course && npm run build:docs",
-        "build:docs:review": "cd vendor\/cl\/review && npm run build:docs",
-        "build:docs:site": "cd vendor\/cl\/site && npm run build:docs",
+        "build:docs:course": "cd vendor/cl/course && npm run build:docs",
+        "build:docs:review": "cd vendor/cl/review && npm run build:docs",
+        "build:docs:site": "cd vendor/cl/site && npm run build:docs",
         "build:docs": "yarn run build:docs:site && npm run build:docs:course && npm run build:docs:review",
-        "cl-publish": "yarn node vendor\/cl\/site\/publisher.js",
-        "build:docs:grades": "cd vendor\/cl\/grades && npm run build:docs",
-        "build:docs:console": "cd vendor\/cl\/console && npm run build:docs"
+        "cl-publish": "yarn node vendor/cl/site/publisher.js",
+        "build:docs:grades": "cd vendor/cl/grades && npm run build:docs",
+        "build:docs:console": "cd vendor/cl/console && npm run build:docs"
     },
     "keywords": [
         "Education",
@@ -39,12 +39,12 @@
         "users-cl": "~0.0.1"
     },
     "devDependencies": {
-        "@babel\/core": "^7.20.7",
-        "@babel\/plugin-syntax-dynamic-import": "^7.8.3",
-        "@babel\/plugin-transform-runtime": "^7.19.6",
-        "@babel\/polyfill": "^7.12.1",
-        "@babel\/preset-env": "^7.20.2",
-        "@babel\/runtime": "7.20.7",
+        "@babel/core": "^7.20.7",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+        "@babel/plugin-transform-runtime": "^7.19.6",
+        "@babel/polyfill": "^7.12.1",
+        "@babel/preset-env": "^7.20.2",
+        "@babel/runtime": "7.20.7",
         "babel-loader": "^9.1.0",
         "copy-webpack-plugin": "11.0.0",
         "cpx": "^1.5.0",
