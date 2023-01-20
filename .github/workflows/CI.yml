@@ -15,6 +15,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Check out repo
+        uses: actions/checkout@v3
       - name: Create secret files
         id: secret-files
         run: |
@@ -24,5 +26,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          context: .
           push: true
           tags: rodsan0/capstone-ss23:latest
