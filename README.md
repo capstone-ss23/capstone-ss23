@@ -12,9 +12,9 @@
 * Set up the website with composer. Since it is available inside the Docker container, you do not need to install it. Simply run `docker compose exec server /var/www/capstone-ss23/install_deps.sh`.
     - Note: If you run into errors with this step, attempt running the commands in `install_deps.sh` line-by-line.
 * Navigate to http://localhost:8081 and make sure PHPMyAdmin works
-* Navigate to http://localhost:8080 and make sure the site loads
+* Navigate to http://capstone.localhost:8080 and make sure the site loads
     - Warning: the site sets a cookie when you attempt to log in. Since no tables have been set up, do NOT log in yet. 
-* Create all tables by navigating to http://localhost:8080/cl/setup/tables
+* Create all tables by navigating to http://capstone.localhost:8080/cl/setup/tables
 * Log in with username `cbowen` and empty password
 * Create a new user for yourself (Course Console -> Management -> Users -> Add User)
 * Log out and log back in as new user
