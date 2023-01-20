@@ -18,9 +18,9 @@ jobs:
       - name: Create secret files
         id: secret-files
         run: |
-          echo "${{ secrets.AUTH_JSON_SECRET_FILE }}" | base64 -d > auth.json
-          echo "${{ secrets.DOT_ENV_SECRET_FILE }}" | base64 -d > .env
-          echo "${{ secrets.SITE_PHP_SECRET_FILE }}" | base64 -d > site.php
+          echo "${{ secrets.AUTH_JSON_SECRET_FILE }}" | base64 -di > auth.json
+          echo "${{ secrets.DOT_ENV_SECRET_FILE }}" | base64 -di > .env
+          echo "${{ secrets.SITE_PHP_SECRET_FILE }}" | base64 -di > site.php
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
