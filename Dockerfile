@@ -1,13 +1,7 @@
 FROM php:8.0-apache AS dev
 
-RUN echo $(ls)
-
 COPY . /var/www/capstone-ss23
 WORKDIR /var/www/capstone-ss23
-
-RUN echo $(ls)
-RUN echo $(ls /var/www/capstone-ss23)
-
 
 RUN a2enmod rewrite
 

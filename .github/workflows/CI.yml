@@ -29,4 +29,4 @@ jobs:
           context: ${{ github.workspace }}
           push: true
           tags: rodsan0/capstone-ss23:latest
-          build-args: --progress=plain
+          # target: prod
