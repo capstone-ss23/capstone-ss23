@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-    branches: [ main ]
+    branches: [ main, docker-cd-setup ]
 
 jobs:
   prod-build:
@@ -29,3 +29,4 @@ jobs:
           context: .
           push: true
           tags: rodsan0/capstone-ss23:latest
+          target: prod
