@@ -20,13 +20,13 @@ jobs:
       - name: create secret files
         id: secret-files
         run: |
-          echo "${{ secrets.AUTH_JSON_SECRET_FILE }}" | base64 -di > auth.json
-          echo "${{ secrets.DOT_ENV_SECRET_FILE }}" | base64 -di > .env
-          echo "${{ secrets.SITE_PHP_SECRET_FILE }}" | base64 -di > site.php
+          echo "${{ secrets.AUTH_JSON_SECRET_FILE }}" | base64 -di > ${{ github.workspace }}/auth.json
+          echo "${{ secrets.DOT_ENV_SECRET_FILE }}" | base64 -di > ${{ github.workspace }}/.env
+          echo "${{ secrets.SITE_PHP_SECRET_FILE }}" | base64 -di > ${{ github.workspace }}/site.php
       - name: build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ${{ github.workspace }}
           push: true
           tags: rodsan0/capstone-ss23:latest
-          target: prod
+          # target: prod
