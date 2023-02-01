@@ -26,31 +26,31 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/charles-owen/tables-cl.git"
+      "url": "https://github.com/capstone-ss23/tables-cl.git"
     },
     {
       "type": "vcs",
-      "url": "https://github.com/charles-owen/site-cl.git"
+      "url": "https://github.com/capstone-ss23/site-cl.git"
     },
     {
       "type": "vcs",
-      "url": "https://github.com/charles-owen/users-cl.git"
+      "url": "https://github.com/capstone-ss23/users-cl.git"
     },
     {
       "type": "vcs",
-      "url": "https://github.com/charles-owen/course-cl.git"
+      "url": "https://github.com/capstone-ss23/course-cl.git"
     },
     {
       "type": "vcs",
-      "url": "https://github.com/charles-owen/console-cl.git"
+      "url": "https://github.com/capstone-ss23/console-cl.git"
     },
     {
       "type": "vcs",
-      "url": "https://github.com/charles-owen/grades-cl.git"
+      "url": "https://github.com/capstone-ss23/grades-cl.git"
     },
     {
       "type": "vcs",
-      "url": "https://github.com/charles-owen/step-cl.git"
+      "url": "https://github.com/capstone-ss23/step-cl.git"
     },
     {
       "type": "vcs",
