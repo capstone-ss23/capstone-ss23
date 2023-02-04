@@ -48,6 +48,7 @@ services:
     volumes:
       - ./site.conf:/etc/apache2/sites-enabled/site.conf
       - ./:/var/www/capstone-ss23
+      - ./mail.txt:/var/www/web-log/email-log.txt
     networks:
       - network
     depends_on:
