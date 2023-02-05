@@ -94,3 +94,6 @@ yarn.lock
 
 # ignore auth
 auth.json
+
+# ignore mail log
+mail.txt
