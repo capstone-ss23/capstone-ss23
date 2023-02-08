@@ -22,8 +22,45 @@
 <p>You can submit as often as you like. You are encouraged to resubmit revisions after reading the peer reviews. You have 24 hours after any review to resubmit, even after the due date.</p>
 
 <?php echo Toggle::end(); ?>
-
 <?php echo $view->present_submissions(); ?>
+
+
+<!--week5 Zhuofan Zeng new added content-->
+<h3 style="text-align: center;background: #00723f;color: white;">Reviews of this assignment appear here.</h3>
+<div>
+    <?php $res = $view->getReviewerContent(); ?>
+    <?php if (empty($res)) {?>
+    <?php }else{?>
+    <?php foreach ($res['allData'] as $key => $value){?>
+            <div style="width: 769px; height: 200px; border: solid 1px;"> <!--Display box for comments-->
+                <?php foreach ($value as $v){?>
+                <?php $data = json_decode($v['metadata'],true);?>
+                <?php if ($res['meid']==$v['reviewerid']){?>
+                <?php echo 'you :'.$data['review']['review'].'&nbsp;'."<b style='font-size: 8px;color: green;'>".$v['time']."</b>";}else{?>
+                <?php echo $key.':'.$data['review']['review'].'&nbsp;'."<b style='font-size: 8px;color: green;'>".$v['time']."</b>"; }?>
+                <br>
+                <?php }?>
+            </div>
+            <br>
+    <?php }?>
+        <br>
+        <form action="" method="">
+            <!--Text input box-->
+            <textarea rows="5" cols="90"></textarea>
+            <!--Pull selection box-->
+            <select name="memberid" id="">
+                <option value="">Please choose</option>
+
+                <?php foreach ($res['reviewData'] as $key => $value){?>
+                    <option value="<?php echo $value;?>">review<?php echo $key;?></option>  <!-- Return key 0 or 1-->
+                <?php }?>
+            </select>
+            <!--Send button-->
+            <input type="submit" value="submit">
+        </form>
+    <?php }?>
+</div>
+<!--week5 end-->
 
 <?php echo Toggle::begin("I get 'Not a valid image'", "p"); ?>
 
