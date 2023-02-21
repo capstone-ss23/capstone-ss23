@@ -32,7 +32,7 @@
     <?php if (empty($res)) {?>
     <?php }else{?>
     <?php foreach ($res['allData'] as $key => $value){?>
-            <div style="width: 769px; height: 200px; border: solid 1px;"> <!--Display box for comments-->
+            <div style="width: 769px; height: 200px; border: solid 1px; overflow-x: scroll"> <!--Display box for comments-->
                 <?php foreach ($value as $v){?>
                 <?php $data = json_decode($v['metadata'],true);?>
                 <?php if ($res['meid']==$v['reviewerid']){?>
@@ -44,9 +44,9 @@
             <br>
     <?php }?>
         <br>
-        <form action="" method="">
+        <form action="/cl/api/review/saveContent" method="POST">
             <!--Text input box-->
-            <textarea rows="5" cols="90"></textarea>
+            <textarea name="content" rows="5" cols="90"></textarea>
             <!--Pull selection box-->
             <select name="memberid" id="">
                 <option value="">Please choose</option>
