@@ -36,8 +36,9 @@
                 <?php foreach ($value as $v){?>
                 <?php $data = json_decode($v['metadata'],true);?>
                 <?php if ($res['meid']==$v['reviewerid']){?>
-                <?php echo 'you :'.$data['review']['review'].'&nbsp;'."<b style='font-size: 8px;color: green;'>".$v['time']."</b>";}else{?>
-                <?php echo $key.':'.$data['review']['review'].'&nbsp;'."<b style='font-size: 8px;color: green;'>".$v['time']."</b>"; }?>
+                <?php echo "<B>you :</B>".$data['review']['review'].'&nbsp;'."<strong style='font-size: 8px;color: green;'>".$v['time']."</strong>";}else{?>
+                <?php echo "<B>$key :</B>".$data['review']['review'].'&nbsp;'."<strong style='font-size: 8px;color: green;'>".$v['time']."</strong>"; }?>
+                <br>
                 <br>
                 <?php }?>
             </div>
