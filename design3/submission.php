@@ -4,7 +4,28 @@
 <link href="../cl/course.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-
+<!--chat box style-->
+<style>
+    #chat {
+        float: right;
+        clear: right;
+    }
+    #chat2{
+        clear: right;
+    }
+    #chat ul li,#chat2 ul li {
+        list-style: none;
+    }
+    #name,#time{
+        font-size: 12px;
+        color: green;
+    }
+    #con{
+        width: 300px;
+        border: solid 1px;
+        border-radius: 10px;
+    }
+</style>
 <div class="full">
 
 <p>When you are done, use this page to submit your diagram to the peer review system. </p>
@@ -25,44 +46,59 @@
 <?php echo $view->present_submissions(); ?>
 
 
-<!--week5 Zhuofan Zeng new added content-->
+<!--week10 Zhuofan Zeng new added content-->
 <h3 style="text-align: center;background: #00723f;color: white;">Reviews of this assignment appear here.</h3>
-<div>
-    <?php $res = $view->getReviewerContent(); ?>
-    <?php if (empty($res)) {?>
-    <?php }else{?>
-    <?php foreach ($res['allData'] as $key => $value){?>
-            <div style="width: 769px; height: 200px; border: solid 1px; overflow-x: scroll"> <!--Display box for comments-->
-                <?php foreach ($value as $v){?>
-                <?php $data = json_decode($v['metadata'],true);?>
-                <?php if ($res['meid']==$v['reviewerid']){?>
-                <?php echo "<B>you :</B>".$data['review']['review'].'&nbsp;'."<strong style='font-size: 8px;color: green;'>".$v['time']."</strong>";}else{?>
-                <?php echo "<B>$key :</B>".$data['review']['review'].'&nbsp;'."<strong style='font-size: 8px;color: green;'>".$v['time']."</strong>"; }?>
+
+    <div id="">
+        <?php $res = $view->getReviewerContent(); ?>
+        <?php if (empty($res)) {?>
+        <?php }else{?>
+            <!-- foreach loop-->
+            <?php foreach ($res['allData'] as $key => $value){?>
+                <!--box for display comment-->
+                <div style="width: 769px; height: 200px; border: solid 1px; overflow-x: scroll;">
+                    <?php foreach ($value as $v){?>
+                        <?php $data = json_decode($v['metadata'],true);?>
+                        <?php if ($res['meid']==$v['reviewerid']){?>
+                            <?php echo "<div id='chat'>
+                                <ul>
+                                    <li id='name'>you</li>
+                                    <li id='con'>&nbsp;".$data['review']['review']."</li>
+                                    <li id='time'>".$v['time']."</li>
+                                </ul>
+                             </div>";
+                        }else{?>
+                            <?php echo "<div id='chat2'>
+                                <ul>
+                                    <li id='name'>$key</li>
+                                    <li id='con' style='background-color: #0c5645; color: white;'>&nbsp;".$data['review']['review']."</li>
+                                    <li id='time'>".$v['time']."</li>
+                                </ul>
+                            </div>"; }?>
+                    <?php }?>
+                </div>
                 <br>
-                <br>
-                <?php }?>
-            </div>
+            <?php }?>
             <br>
-    <?php }?>
-        <br>
-        <form action="/cl/api/review/saveContent" method="POST">
-            <!--Text input box-->
-            <textarea name="content" rows="5" cols="90"></textarea>
-            <!--Pull selection box-->
-            <select name="memberid" id="">
-                <option value="">Please choose</option>
-
-                <?php foreach ($res['reviewData'] as $key => $value){?>
-                    <option value="<?php echo $value;?>">review<?php echo $key;?></option>  <!-- Return key 0 or 1-->
-                <?php }?>
-            </select>
-            <!--Send button-->
-            <input type="submit" value="submit">
-        </form>
-    <?php }?>
-</div>
-<!--week5 end-->
-
+            <form action="/cl/api/review/saveContent" method="POST">
+                <!--box for intput comment-->
+                <textarea name="content" rows="5" cols="90"></textarea>
+                <!--drop down box-->
+                <select name="memberid" id="">
+                    <option value="">Please choose</option>
+                    <!--reviewData-->
+                    <?php foreach ($res['reviewData'] as $key => $value){?>
+                        <option value="<?php echo $value;?>">
+                            review<?php echo $key;?>
+                        </option>   <!--return key 0 or 1-->
+                    <?php }?>
+                </select>
+                <!--send button-->
+                <input type="submit" value="submit">
+            </form>
+        <?php }?>
+    </div>
+    <!--week10 end-->
 <?php echo Toggle::begin("I get 'Not a valid image'", "p"); ?>
 
 <p>Submissions must be a PNG file. If you try to submit the Visual Paradigm .vpp file, it will fail 
