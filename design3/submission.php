@@ -24,6 +24,9 @@
         width: 300px;
         border: solid 1px;
         border-radius: 10px;
+        padding: 5px;
+        font-size: 12px;
+
     }
 </style>
 <div class="full">
@@ -63,7 +66,7 @@
                             <?php echo "<div id='chat'>
                                 <ul>
                                     <li id='name'>you</li>
-                                    <li id='con'>&nbsp;".$data['review']['review']."</li>
+                                    <li id='con'>".$data['review']['review']."</li>
                                     <li id='time'>".$v['time']."</li>
                                 </ul>
                              </div>";
@@ -71,7 +74,7 @@
                             <?php echo "<div id='chat2'>
                                 <ul>
                                     <li id='name'>$key</li>
-                                    <li id='con' style='background-color: #0c5645; color: white;'>&nbsp;".$data['review']['review']."</li>
+                                    <li id='con' style='background-color: #0c5645; color: white;'>".$data['review']['review']."</li>
                                     <li id='time'>".$v['time']."</li>
                                 </ul>
                             </div>"; }?>
